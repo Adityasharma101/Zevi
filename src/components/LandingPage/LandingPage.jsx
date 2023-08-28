@@ -1,25 +1,23 @@
 import React, { useState } from 'react'
 import logo from "../../assets/logo.png"
-import Searchbar from '../SearchBar/Searchbar'
+import SearchBar from '../SearchBar/SearchBar'
 import Sugesstion from '../Sugesstion/Sugesstion'
 import {useDispatch , useSelector } from "react-redux";
 import { setString } from '../../redux/searchSlice';
 import './LandingPage.scss'
+import {  useNavigate } from 'react-router-dom';
 
 const LandingPage = () => {
+  const navigate = useNavigate();
   const [click , setClick]  = useState(false);
   const dispatch = useDispatch();
   const searchInput = useSelector(state =>state.string);
-  const redirect = async () => {
-    window.location.href = "/search";
-  };
+
   
   const onHandleSubmit =async (e)=>{
     if(e.key ==="Enter"){
       if(searchInput){
-        // console.log("you got the search item")
-        console.log(searchInput)
-        // await redirect();
+        navigate('search' );
         
       }
     }
@@ -32,7 +30,7 @@ const LandingPage = () => {
             <img src={logo} alt="" />
         </div>
         <div className="search_bar" onClick={ () => setClick(!click)}>
-        <Searchbar value={searchInput} onHandleSubmit={onHandleSubmit} handleChange ={(e)=>dispatch(setString(e.target.value))}/>
+        <SearchBar value={searchInput} onHandleSubmit={onHandleSubmit} handleChange ={(e)=>dispatch(setString(e.target.value))}/>
         </div>
 
         {click && <Sugesstion setClick ={setClick}/>}

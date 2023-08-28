@@ -1,0 +1,31 @@
+// Your SCSS styles
+.checkbox-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 0;
+  
+    &__label {
+      text-align: left;
+      font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+  
+      &__checkbox {
+        // Hide the default checkbox
+        display: none;
+        margin-right: 8px;
+        width: 16px;
+        height: 16px;
+        border: 1px solid #000;
+        border-radius: 4px;
+        background-color: transparent;
+        cursor: pointer;
+  
+        &:checked {
+          background-color: #000;
+        }
+      }
+    }
+  }
+  

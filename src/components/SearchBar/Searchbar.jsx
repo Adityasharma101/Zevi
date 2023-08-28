@@ -1,9 +1,8 @@
 import React from 'react'
 import {BsSearch} from "react-icons/bs"
-import './Searchbar.scss'
+import './SearchBar.scss'
 
-
-const Searchbar = ({value , handleChange , onHandleSubmit}) => {
+const SearchBar = ({value , handleChange , onHandleSubmit}) => {
   return (
     <>
       <input type="text" placeholder='Search' name="search" id="search" value={value} onKeyDown={onHandleSubmit} autoComplete="off" onChange={handleChange} />
@@ -12,4 +11,4 @@ const Searchbar = ({value , handleChange , onHandleSubmit}) => {
   )
 }
 
-export default Searchbar
+export default SearchBar

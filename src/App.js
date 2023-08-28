@@ -6,16 +6,19 @@ import Products from "./components/Products/Products";
 import { Provider } from "react-redux";
 import store from "./store";
 
+
+console.log(store)
+
 const App = () => {
   return (
+    <BrowserRouter>
     <Provider store={store}>
-      <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="search" element={<Products />} />
         </Routes>
-      </BrowserRouter>
     </Provider>
+      </BrowserRouter>
   );
 };
 
