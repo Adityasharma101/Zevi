@@ -1,0 +1,28 @@
+.search_bar{
+    background-color: whitesmoke ;
+    width: 50%;
+    border-radius: 10px;
+    height: 3rem;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+
+    input{
+        background-color: transparent;
+        border: none;
+        height: 100%;
+        width: 100%;
+        margin: 0 10px;
+
+        &:focus{
+            outline: none;
+        }
+
+    }
+
+    #search_icon{
+        color: grey;
+        cursor: pointer;
+      
+    }
+}
