@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react'
 // import { PiHeartLight } from "react-icons/pi"
-import { AiOutlineStar ,AiOutlineHeart } from "react-icons/ai"
+import { AiFillStar ,AiTwotoneHeart } from "react-icons/ai"
 
 import './ProductCard.scss'
 
@@ -14,9 +14,12 @@ const Card = ({ item }) => {
     return (
         <div className='card'>
             <div className='like'>
-                <AiOutlineHeart  className={toggleHeart ? 'heart active' : 'heart'} onClick={changeColor} />
+                <AiTwotoneHeart  className={toggleHeart ? 'heart active' : 'heart'} onClick={changeColor} />
             </div>
+            <div className='image-container'>
             <img src={item.img} alt={item.title} className="card-img" />
+            <div className="overlay">View Product</div>
+            </div>
             <div className="card-details">
                 <h3 className="card-title">{item.title}</h3>
                 <section className="card-price">
@@ -27,7 +30,7 @@ const Card = ({ item }) => {
                 <section className="card-reviews">
                     {[...Array(item.rating)].map((_, index) => (
                         <div className="" key={index}>
-                            <AiOutlineStar  className='rating-star'/>                        
+                            <AiFillStar  className='rating-star'/>                        
                         </div>
                     ))}
 

@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {RiArrowDropDownLine} from 'react-icons/ri'
 import './SideBar.scss'
 const Box = ({ change, item }) => {
     const { checked, id, desc } = item;
@@ -30,7 +30,7 @@ const SideBar = ({ Label, filterItems, change }) => {
     return (
         <>
             <div className="sidebar_heading">
-                {Label}
+                {Label} <RiArrowDropDownLine/>
             </div>
             {
                 filterItems.map((item) => (

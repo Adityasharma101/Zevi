@@ -12,7 +12,6 @@ import SideBar from '../SideBar/SideBar';
 const Products = () => {
   const searchInput = useSelector(state => state.string);
   const [data, setData] = useState(dataList);
-  const [found, setFound] = useState(false);
   const [filterItems, setfilterItems] = useState(ItemsData);
   const [filterPrice, setfilterPrice] = useState(PriceData);
   const [filterRating, setfilterRating] = useState(RatingsData);
